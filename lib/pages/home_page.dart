@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_mini/components/search_buttun.dart';
 import 'package:project_mini/components/user_tile.dart';
 import 'package:project_mini/pages/chat_page.dart';
 import 'package:project_mini/services.dart/auth/auth_service.dart';
@@ -28,7 +29,15 @@ class HomePage extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const MyDrawer(),
-      body: _buildUserList(),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: SearchButton(onTap: () {}),
+          ),
+          Expanded(child: _buildUserList()),
+        ],
+      ),
     );
   }
 
